@@ -6,34 +6,25 @@
 <title>Happy Birthday, My Love 💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --pink: #f4a7b9;
-    --rose: #e8627a;
-    --light-text: #9e5a6e;
-    --text: #4a2030;
-  }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Nunito', sans-serif;
     background: linear-gradient(135deg, #fce4ec 0%, #fff0e6 50%, #fce4ec 100%);
-    color: var(--text);
+    color: #4a2030;
     overflow-x: hidden;
   }
 
   /* PETALS */
-  .petals-container {
+  .petals {
     position: fixed; top: 0; left: 0;
     width: 100%; height: 100%;
     pointer-events: none; z-index: 0; overflow: hidden;
   }
   .petal {
-    position: absolute;
-    border-radius: 50% 0 50% 0;
-    opacity: 0;
-    animation: fall linear infinite;
+    position: absolute; border-radius: 50% 0 50% 0;
+    opacity: 0; animation: fall linear infinite;
   }
   @keyframes fall {
     0%   { transform: translateY(-20px) rotate(0deg); opacity: 0.6; }
@@ -44,109 +35,108 @@
     position: relative; z-index: 1;
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
-    padding: 80px 24px 60px;
+    padding: 60px 24px;
   }
 
-  .box {
-    background: white;
-    border-radius: 24px;
-    padding: 44px 40px;
-    max-width: 700px; width: 100%;
-    box-shadow: 0 16px 48px rgba(232,98,122,0.1);
-    border: 1px solid rgba(244,167,185,0.25);
-  }
-
-  .tag {
-    font-size: 0.72rem; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--pink);
-    font-weight: 700; margin-bottom: 10px;
-  }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 5vw, 2.6rem);
-    color: var(--text); margin-bottom: 20px; line-height: 1.2;
-  }
-
-  .line {
-    width: 50px; height: 3px;
-    background: linear-gradient(90deg, var(--pink), #f9c8a0);
-    border-radius: 2px; margin-bottom: 28px;
-  }
-
-  p {
-    font-size: 1rem; line-height: 1.95;
-    color: var(--text); margin-bottom: 16px;
-  }
-
-  .fade-in {
-    opacity: 0; transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  /* LANDING */
+  /* ===== LANDING ===== */
   #landing {
-    text-align: center; flex-direction: column;
+    flex-direction: column; text-align: center;
     background: linear-gradient(160deg, #fff0f5, #fff5ed);
   }
-  .cake { font-size: 3.5rem; margin-bottom: 18px; display: block; animation: bounce 2s ease-in-out infinite; }
-  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+  .cake {
+    font-size: 4rem; display: block; margin-bottom: 20px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
 
   #landing h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.2rem, 8vw, 4rem);
-    color: var(--rose); line-height: 1.15; margin-bottom: 20px;
+    color: #e8627a; line-height: 1.15; margin-bottom: 20px;
   }
 
   .typing-wrap {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    color: var(--light-text); font-style: italic;
-    min-height: 34px; margin-bottom: 44px;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #9e5a6e; font-style: italic;
+    min-height: 32px; margin-bottom: 44px;
   }
   .cursor {
-    display: inline-block; width: 2px; height: 1.1em;
-    background: var(--rose); margin-left: 2px;
+    display: inline-block; width: 2px; height: 1em;
+    background: #e8627a; margin-left: 2px;
     vertical-align: middle; animation: blink 0.8s infinite;
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
   .btn {
     display: inline-block; padding: 15px 42px;
-    background: linear-gradient(135deg, var(--rose), var(--pink));
+    background: linear-gradient(135deg, #e8627a, #f4a7b9);
     color: white; text-decoration: none; border-radius: 50px;
-    font-size: 1rem; font-weight: 600; letter-spacing: 0.5px;
+    font-size: 1rem; font-weight: 600;
     box-shadow: 0 8px 28px rgba(232,98,122,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(232,98,122,0.4); }
 
   .scroll-hint {
-    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-    color: var(--pink); font-size: 0.78rem; letter-spacing: 2px;
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+    color: #f4a7b9; font-size: 0.78rem; letter-spacing: 2px;
     text-transform: uppercase; animation: pulse 2s infinite;
   }
   @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
-  /* MESSAGE */
-  #message { background: white; }
-  .story-p {
-    border-left: 3px solid var(--pink);
-    padding-left: 18px; margin-bottom: 22px;
-    font-size: 1rem; line-height: 1.95;
+  /* ===== BIRTHDAY MESSAGE ===== */
+  #message {
+    background: white;
   }
 
-  /* PHOTOS */
+  .msg-box {
+    background: linear-gradient(135deg, #fff5f7, #fff9f5);
+    border-radius: 24px; padding: 48px 44px;
+    max-width: 680px; width: 100%;
+    border: 1px solid rgba(244,167,185,0.3);
+    box-shadow: 0 16px 48px rgba(232,98,122,0.09);
+  }
+
+  .tag {
+    font-size: 0.72rem; letter-spacing: 3px;
+    text-transform: uppercase; color: #f4a7b9;
+    font-weight: 700; margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #4a2030; margin-bottom: 20px; line-height: 1.2;
+  }
+
+  .line {
+    width: 50px; height: 3px;
+    background: linear-gradient(90deg, #f4a7b9, #f9c8a0);
+    border-radius: 2px; margin-bottom: 28px;
+  }
+
+  .msg-box p {
+    font-size: 1rem; line-height: 1.95; color: #4a2030;
+    border-left: 3px solid #f4a7b9;
+    padding-left: 18px; margin-bottom: 20px;
+  }
+
+  /* ===== PHOTOS ===== */
   #photos {
     background: linear-gradient(160deg, #fff0f5, #fff5ed);
     flex-direction: column;
   }
+
   .photo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px; margin-top: 8px;
+    gap: 14px;
+    max-width: 680px; width: 100%;
+    margin-top: 24px;
   }
+
   .photo-card {
     border-radius: 16px; overflow: hidden;
     position: relative; cursor: pointer;
@@ -155,12 +145,16 @@
     background: linear-gradient(135deg, #fce4ec, #fff0e6);
   }
   .photo-card:hover { transform: translateY(-5px); }
+
+  /* ── To add a photo: replace the emoji div with <img src="photo1.jpg"> ── */
   .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .photo-placeholder {
-    width: 100%; height: 100%; min-height: 160px;
+
+  .placeholder {
+    width: 100%; height: 100%; min-height: 180px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
+
   .photo-caption {
     position: absolute; bottom: 0; left: 0; right: 0;
     background: rgba(232,98,122,0.9); color: white;
@@ -169,159 +163,70 @@
   }
   .photo-card:hover .photo-caption,
   .photo-card.active .photo-caption { transform: translateY(0); }
+
   .photo-note {
-    margin-top: 14px; font-size: 0.82rem;
-    color: var(--light-text); font-style: italic; text-align: center;
+    margin-top: 12px; font-size: 0.8rem;
+    color: #9e5a6e; font-style: italic; text-align: center;
   }
 
-  /* LETTERS */
-  #letters { background: white; flex-direction: column; }
-  .letters-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 16px; margin-top: 8px;
-  }
-  .letter-btn {
-    background: linear-gradient(135deg, #fff5f7, #fff9f5);
-    border: 1.5px solid rgba(244,167,185,0.4);
-    border-radius: 16px; padding: 22px 18px;
-    cursor: pointer; text-align: left; transition: all 0.3s;
-    font-family: 'Nunito', sans-serif;
-  }
-  .letter-btn:hover {
-    border-color: var(--pink); transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(232,98,122,0.12);
-  }
-  .l-icon { font-size: 1.6rem; display: block; margin-bottom: 8px; }
-  .l-title { font-size: 0.9rem; font-weight: 700; color: var(--rose); margin-bottom: 3px; }
-  .l-hint { font-size: 0.76rem; color: var(--light-text); }
-
-  /* MODAL */
-  .modal-bg {
-    display: none; position: fixed; inset: 0;
-    background: rgba(74,32,48,0.55);
-    z-index: 2000; align-items: center; justify-content: center;
-    padding: 24px; backdrop-filter: blur(4px);
-  }
-  .modal-bg.open { display: flex; }
-  .modal-inner {
-    background: white; border-radius: 22px;
-    padding: 38px 32px; max-width: 520px; width: 100%;
-    max-height: 85vh; overflow-y: auto;
-    box-shadow: 0 28px 70px rgba(232,98,122,0.18);
-    position: relative;
-  }
-  .modal-inner h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem; color: var(--rose); margin-bottom: 18px;
-  }
-  .modal-inner p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 12px; }
-  .modal-close {
-    position: absolute; top: 14px; right: 18px;
-    background: none; border: none; font-size: 1.3rem;
-    cursor: pointer; color: var(--light-text);
-  }
-
-  /* VOICE */
+  /* ===== VOICE ===== */
   #voice {
-    background: linear-gradient(160deg, #fff0f5, #fff5ed);
+    background: white;
     flex-direction: column; text-align: center;
   }
+
   .voice-btn {
-    width: 110px; height: 110px;
-    background: linear-gradient(135deg, var(--rose), var(--pink));
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, #e8627a, #f4a7b9);
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 2.6rem; margin: 0 auto 22px; cursor: pointer;
+    font-size: 2.8rem; margin: 0 auto 20px; cursor: pointer;
     box-shadow: 0 0 0 0 rgba(232,98,122,0.4);
     animation: ripple 2s infinite; transition: transform 0.2s;
     user-select: none;
   }
   .voice-btn:hover { transform: scale(1.05); }
-  .voice-btn.playing { animation: none; background: linear-gradient(135deg, #c0392b, var(--rose)); }
+  .voice-btn.playing { animation: none; background: linear-gradient(135deg, #c0392b, #e8627a); }
+
   @keyframes ripple {
     0%  { box-shadow: 0 0 0 0 rgba(232,98,122,0.4); }
-    70% { box-shadow: 0 0 0 22px rgba(232,98,122,0); }
+    70% { box-shadow: 0 0 0 24px rgba(232,98,122,0); }
     100%{ box-shadow: 0 0 0 0 rgba(232,98,122,0); }
   }
+
   .voice-label {
     font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: 1.1rem; color: var(--light-text); margin-bottom: 6px;
+    font-size: 1.1rem; color: #9e5a6e; margin-bottom: 6px;
   }
-  .voice-status { font-size: 0.83rem; color: var(--pink); min-height: 22px; }
+  .voice-status { font-size: 0.83rem; color: #f4a7b9; min-height: 22px; }
 
-  /* WHY */
-  #why { background: white; flex-direction: column; }
-  .why-list { display: grid; gap: 14px; margin-top: 8px; }
-  .why-item {
-    background: linear-gradient(135deg, #fff5f7, #fff9f5);
-    border-left: 4px solid var(--pink);
-    border-radius: 0 14px 14px 0;
-    padding: 18px 20px; font-size: 0.98rem; line-height: 1.7;
-    transition: transform 0.2s;
-  }
-  .why-item:hover { transform: translateX(5px); }
-
-  /* FUTURE */
-  #future { background: linear-gradient(160deg, #fff0f5, #fff5ed); }
-  .future-list { list-style: none; margin-top: 8px; }
-  .future-list li {
-    display: flex; gap: 14px; align-items: flex-start;
-    padding: 14px 0; border-bottom: 1px solid rgba(244,167,185,0.2);
-    font-size: 0.98rem; line-height: 1.7;
-  }
-  .future-list li:last-child { border-bottom: none; }
-  .fi { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
-
-  /* BIRTHDAY */
-  #birthday { background: white; flex-direction: column; text-align: center; }
-  .bday-box {
-    background: linear-gradient(135deg, var(--rose), #c0392b);
-    border-radius: 24px; padding: 48px 40px;
-    max-width: 620px; margin: 0 auto;
-    box-shadow: 0 18px 54px rgba(232,98,122,0.28);
-  }
-  .bday-box h2 { color: white; }
-  .bday-box p { color: rgba(255,255,255,0.9); }
-  .bday-cake { font-size: 3.8rem; display: block; margin-bottom: 18px; animation: bounce 2s infinite; }
-
-  /* SECRET */
-  #secret-dot {
-    position: fixed; bottom: 18px; right: 18px;
-    width: 40px; height: 40px;
-    background: rgba(244,167,185,0.12);
-    border: 1px solid rgba(244,167,185,0.18);
-    border-radius: 50%; cursor: pointer; z-index: 900;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; transition: background 0.3s;
-  }
-  #secret-dot:hover { background: rgba(244,167,185,0.3); }
-
-  /* FOOTER */
+  /* ===== FOOTER ===== */
   footer {
     text-align: center; padding: 44px 24px;
-    background: linear-gradient(135deg, var(--rose), #c0392b);
+    background: linear-gradient(135deg, #e8627a, #c0392b);
     color: white; position: relative; z-index: 1;
   }
   footer .fn {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; font-style: italic; margin-bottom: 6px;
+    font-size: 1.5rem; font-style: italic; margin-bottom: 8px;
   }
-  footer p { color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+  footer p { color: rgba(255,255,255,0.85); margin-bottom: 6px; font-size: 0.95rem; }
+
+  /* FADE IN */
+  .fade-in { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   /* MOBILE */
-  @media (max-width: 560px) {
-    .box { padding: 30px 20px; }
-    .photo-grid { grid-template-columns: repeat(2, 1fr); }
-    .letters-grid { grid-template-columns: 1fr; }
-    .bday-box { padding: 32px 22px; }
+  @media (max-width: 500px) {
+    .msg-box { padding: 30px 20px; }
+    .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
   }
 </style>
 </head>
 <body>
 
-<div class="petals-container" id="petals"></div>
-<div id="secret-dot" onclick="openModal('secretModal')">🌸</div>
+<div class="petals" id="petals"></div>
 
-<!-- LANDING -->
+<!-- ===== LANDING ===== -->
 <section id="landing">
   <div>
     <span class="cake">🎂</span>
@@ -329,208 +234,93 @@
     <div class="typing-wrap">
       <span id="typing-text"></span><span class="cursor"></span>
     </div>
-    <a href="#message" class="btn">Enter Our World 💖</a>
+    <a href="#message" class="btn">Open Your Surprise 💖</a>
   </div>
   <div class="scroll-hint">↓ scroll ↓</div>
 </section>
 
-<!-- MESSAGE / STORY -->
+<!-- ===== BIRTHDAY MESSAGE ===== -->
 <section id="message">
-  <div class="box fade-in">
-    <div class="tag">Chapter One</div>
-    <h2>Our Story 📖</h2>
+  <div class="msg-box fade-in">
+    <div class="tag">Chaitra 16</div>
+    <h2>For You, Angrybird 💖</h2>
     <div class="line"></div>
-    <p class="story-p">We didn't plan this. We were just two kids in the same class — probably arguing about something small, not even noticing what was quietly starting between us.</p>
-    <p class="story-p">But then one day, dear… you did something I never expected. You came forward first. You proposed. And honestly? That was the bravest thing anyone has ever done for me.</p>
-    <p class="story-p">Five years. Class 8 to now. Different cities, different lives — but somehow, still us. Hamro distance le hamro feelings lai rokna sakena.</p>
-    <p class="story-p">We've broken up. We've fought. We've had moments where it felt like everything was ending. But every single time — we came back. Not because it was easy. Because it was <em>real</em>.</p>
-    <p class="story-p">The video calls at night, your face on that screen when everything else felt so far — I hold on to those moments, love. Those are my favourite ones.</p>
-    <p class="story-p">You're not just my girlfriend, angrybird. You're my longest, most honest story. And my favourite one. 💖</p>
+
+    <p>We didn't plan this. We were just two kids in the same class — probably arguing about something small, not even noticing what was quietly starting between us.</p>
+    <p>Then one day, dear… you came forward first. You proposed. And honestly? That was the bravest thing anyone has ever done for me.</p>
+    <p>Five years. Class 8 to now. Different cities, different lives — but somehow, still us. Hamro distance le hamro feelings lai rokna sakena.</p>
+    <p>We've broken up. We've fought. But every single time — we came back. Not because it was easy. Because it was <em>real</em>.</p>
+    <p>I wish I could be there today. Standing next to you, holding a cake, watching you pretend to be embarrassed 😄. But since I can't — I built this. For you.</p>
+    <p>Yo din timilai yo duniyama lyayo… and for that, I'm really, truly glad. 🎂</p>
+    <p>Happy Birthday, angrybird. Timi nai ho mero — always. 💖</p>
   </div>
 </section>
 
-<!-- PHOTOS -->
+<!-- ===== 3 PHOTOS ===== -->
 <section id="photos">
-  <div style="max-width:700px; width:100%;" class="fade-in">
-    <div class="tag">Us, always</div>
-    <h2>Our Memories 🖼️</h2>
-    <div class="line"></div>
+  <div style="max-width:680px; width:100%;" class="fade-in">
+    <div class="tag" style="text-align:center;">Us 🌸</div>
     <div class="photo-grid">
 
-      <!-- photo1.jpg -->
+      <!--
+        HOW TO ADD PHOTOS:
+        1. Name your photos: photo1.jpg, photo2.jpg, photo3.jpg
+        2. Put them in the SAME folder as this HTML file
+        3. For each card below, DELETE the <div class="placeholder"> line
+           and UNCOMMENT the <img> line (remove the arrows and dashes around it)
+      -->
+
+      <!-- PHOTO 1 → file name: photo1.jpg -->
       <div class="photo-card" onclick="this.classList.toggle('active')">
-        <div class="photo-placeholder">📸</div>
+        <div class="placeholder">📸</div>
         <!-- <img src="photo1.jpg" alt=""> -->
-        <div class="photo-caption">Every time I see this, I remember exactly how I felt. 💖</div>
+        <div class="photo-caption">Timi thiyo — that's enough. 💖</div>
       </div>
 
-      <!-- photo2.jpg -->
+      <!-- PHOTO 2 → file name: photo2.jpg -->
       <div class="photo-card" onclick="this.classList.toggle('active')">
-        <div class="photo-placeholder">🌙</div>
+        <div class="placeholder">🌙</div>
         <!-- <img src="photo2.jpg" alt=""> -->
-        <div class="photo-caption">ती raatharuko calls… neither of us wanted to hang up first. 🌙</div>
+        <div class="photo-caption">ती raatharuko calls… I still think about those nights. 🌙</div>
       </div>
 
-      <!-- photo3.jpg -->
+      <!-- PHOTO 3 → file name: photo3.jpg -->
       <div class="photo-card" onclick="this.classList.toggle('active')">
-        <div class="photo-placeholder">💌</div>
+        <div class="placeholder">🌸</div>
         <!-- <img src="photo3.jpg" alt=""> -->
-        <div class="photo-caption">Timi aaghi aau. You chose me. I'll never stop being grateful. 💌</div>
-      </div>
-
-      <!-- photo4.jpg -->
-      <div class="photo-card" onclick="this.classList.toggle('active')">
-        <div class="photo-placeholder">🌸</div>
-        <!-- <img src="photo4.jpg" alt=""> -->
-        <div class="photo-caption">One of those moments I wish I could go back to. Timi sanga. 🌸</div>
-      </div>
-
-      <!-- photo5.jpg -->
-      <div class="photo-card" onclick="this.classList.toggle('active')">
-        <div class="photo-placeholder">💪</div>
-        <!-- <img src="photo5.jpg" alt=""> -->
-        <div class="photo-caption">We broke, we bent — but we always came back. That's us. 💪</div>
-      </div>
-
-      <!-- photo6.jpg -->
-      <div class="photo-card" onclick="this.classList.toggle('active')">
-        <div class="photo-placeholder">✈️</div>
-        <!-- <img src="photo6.jpg" alt=""> -->
-        <div class="photo-caption">Not long now. I'm coming. I want to hold every moment. 🥹</div>
+        <div class="photo-caption">One moment I wish I could go back to. Timi sanga. 🌸</div>
       </div>
 
     </div>
-    <p class="photo-note">Tap each photo to reveal the message 💖</p>
+    <p class="photo-note">Tap each photo to see the message 💖</p>
   </div>
 </section>
 
-<!-- LETTERS -->
-<section id="letters">
-  <div style="max-width:700px; width:100%;" class="fade-in">
-    <div class="tag">Written for you</div>
-    <h2>Letters for You 💌</h2>
-    <div class="line"></div>
-    <p style="color:var(--light-text); margin-bottom:24px; font-size:0.95rem;">Open whichever one you need right now…</p>
-    <div class="letters-grid">
-      <div class="letter-btn" onclick="openLetter('sad')">
-        <span class="l-icon">🌧️</span>
-        <div class="l-title">When you feel sad</div>
-        <div class="l-hint">Open this one quietly</div>
-      </div>
-      <div class="letter-btn" onclick="openLetter('angry')">
-        <span class="l-icon">😡</span>
-        <div class="l-title">When you're angry</div>
-        <div class="l-hint">Angrybird mode 😄</div>
-      </div>
-      <div class="letter-btn" onclick="openLetter('miss')">
-        <span class="l-icon">💭</span>
-        <div class="l-title">When you miss me</div>
-        <div class="l-hint">I miss you too, always</div>
-      </div>
-      <div class="letter-btn" onclick="openLetter('doubt')">
-        <span class="l-icon">🌊</span>
-        <div class="l-title">When you doubt us</div>
-        <div class="l-hint">Read this, please</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VOICE -->
+<!-- ===== VOICE ===== -->
 <section id="voice">
-  <div class="fade-in" style="text-align:center; max-width:480px;">
+  <div class="fade-in">
     <div class="tag" style="text-align:center;">Just for you</div>
-    <h2>Tap When You Need Me 🎤</h2>
-    <div class="line" style="margin:0 auto 28px;"></div>
+    <br>
     <div class="voice-btn" id="voiceBtn" onclick="playVoice()">🎙️</div>
     <div class="voice-label">"Tap to hear me…"</div>
     <div class="voice-status" id="voiceStatus"></div>
+
+    <!--
+      AUDIO FILES — put both in the SAME folder as this HTML file:
+      → voice.m4a   = your recorded voice message
+      → bgm3.mp3    = background music (plays automatically on first click)
+    -->
     <audio id="voiceAudio" src="voice.m4a"></audio>
     <audio id="bgMusic" src="bgm3.mp3" loop></audio>
   </div>
 </section>
 
-<!-- WHY I LOVE YOU -->
-<section id="why">
-  <div class="box fade-in">
-    <div class="tag">The real reasons</div>
-    <h2>Why I Love You 💖</h2>
-    <div class="line"></div>
-    <p style="color:var(--light-text); margin-bottom:20px; font-size:0.92rem;">Not a list. Just the truth.</p>
-    <div class="why-list">
-      <div class="why-item">Because you came forward first — when most people wouldn't have. Timi aaghi aayau. That took real courage.</div>
-      <div class="why-item">Because even after every breakup, every fight, every hard moment — you still came back. And so did I.</div>
-      <div class="why-item">Because your anger is fast… but your love is faster. Angrybird outside, soft inside. I know you. 😄</div>
-      <div class="why-item">Because you don't open up easily — and when you do, even just a little, it means everything to me.</div>
-      <div class="why-item">Because five years have passed and I'm still not bored of you. Not even close. Timi nai ho mero, always.</div>
-      <div class="why-item">Because this distance hasn't changed anything. And that tells me everything I need to know about us.</div>
-    </div>
-  </div>
-</section>
-
-<!-- FUTURE -->
-<section id="future">
-  <div class="box fade-in">
-    <div class="tag">Me + You, always</div>
-    <h2>Our Future 💍</h2>
-    <div class="line"></div>
-    <p>I don't want to love you from far away forever. I want the small things. The everyday things. Everything.</p>
-    <ul class="future-list">
-      <li><span class="fi">🍜</span>Eat together — not on a screen. Actually sit beside you and eat.</li>
-      <li><span class="fi">🚶</span>Walk somewhere random. Nowhere planned. Just us.</li>
-      <li><span class="fi">😤</span>Fight about something stupid and laugh about it 10 minutes later.</li>
-      <li><span class="fi">🌙</span>Fall asleep on a call — but actually be in the same room this time.</li>
-      <li><span class="fi">💍</span>The plan is fixed, dear. From both sides. And I think about it more than I say.</li>
-      <li><span class="fi">🏠</span>Build something together. Not just moments — a life.</li>
-    </ul>
-    <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:var(--rose); margin-top:28px;">
-      "From classmates to this… and one day, to something permanent. I want that future. Only with you."
-    </p>
-  </div>
-</section>
-
-<!-- BIRTHDAY -->
-<section id="birthday">
-  <div class="bday-box fade-in">
-    <span class="bday-cake">🎂</span>
-    <h2>Chaitra 16 — A Date I'll Never Forget</h2>
-    <div class="line" style="background:rgba(255,255,255,0.35); margin:16px auto 24px;"></div>
-    <p>I wish I could be there today. Standing next to you, maybe holding a cake, watching you pretend to be embarrassed. 😄</p>
-    <p>But since I can't — I built this. For you. So you could feel how much today means to me, even across the distance.</p>
-    <p>Yo din timilai yo duniyama lyayo… and for that, I'm really, truly glad. 🎂</p>
-    <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:white; margin-top:20px;">Happy Birthday, angrybird. 💖</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <p class="fn">With all my love — Raja 💖</p>
   <p>For my angrybird. My longest story. My forever plan.</p>
-  <p style="margin-top:16px; font-size:0.82rem; opacity:0.65;">Chaitra 16 · Always yours 🌸</p>
+  <p style="margin-top:14px; font-size:0.8rem; opacity:0.6;">Chaitra 16 · Always yours 🌸</p>
 </footer>
-
-<!-- LETTER MODAL -->
-<div class="modal-bg" id="letterModal">
-  <div class="modal-inner">
-    <button class="modal-close" onclick="closeModal('letterModal')">✕</button>
-    <h3 id="modalTitle"></h3>
-    <div id="modalContent"></div>
-  </div>
-</div>
-
-<!-- SECRET MODAL -->
-<div class="modal-bg" id="secretModal">
-  <div class="modal-inner" style="text-align:center;">
-    <button class="modal-close" onclick="closeModal('secretModal')">✕</button>
-    <div style="font-size:2.2rem; margin-bottom:14px;">🌸</div>
-    <h3 style="margin-bottom:18px;">You found this… 🥹</h3>
-    <p>That means you were really exploring. Which means you care. Which means everything.</p>
-    <p style="font-family:'Playfair Display',serif; font-style:italic; color:var(--rose); font-size:1.05rem; margin-top:8px;">
-      "I chose you five years ago without knowing what the future looked like. And I'd choose you again today, knowing everything."
-    </p>
-    <p style="margin-top:14px;">— always, Raja 💖</p>
-  </div>
-</div>
 
 <script>
 // PETALS
@@ -544,65 +334,64 @@ for (let i = 0; i < 16; i++) {
 }
 
 // TYPING
-const phrases = ["To the girl who chose me first…","To my favourite angrybird…","To five years of us…","Happy Birthday, love 🎂"];
-let pi=0,ci=0,del=false;
-const tel=document.getElementById('typing-text');
-function type(){
-  const cur=phrases[pi];
-  if(!del){tel.textContent=cur.slice(0,++ci);if(ci===cur.length){del=true;setTimeout(type,1800);return;}}
-  else{tel.textContent=cur.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
-  setTimeout(type,del?38:68);
+const phrases = ["To the girl who chose me first…", "To my favourite angrybird…", "To five years of us…", "Happy Birthday, love 🎂"];
+let pi=0, ci=0, del=false;
+const tel = document.getElementById('typing-text');
+function type() {
+  const cur = phrases[pi];
+  if (!del) { tel.textContent = cur.slice(0,++ci); if (ci===cur.length){del=true;setTimeout(type,1800);return;} }
+  else { tel.textContent = cur.slice(0,--ci); if (ci===0){del=false;pi=(pi+1)%phrases.length;} }
+  setTimeout(type, del?38:68);
 }
 type();
 
 // FADE IN
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-// LETTERS
-const letters={
-  sad:{title:"🌧️ When you feel sad",content:`<p>Hey love,</p><p>I know you don't always open up. I know you go quiet sometimes — and that's okay. You don't have to explain everything to me.</p><p>Timi chup basda pani, I understand. I'm not going anywhere.</p><p>You don't have to be strong all the time. Not with me. Just reach out — even just a text. I'll be right there.</p><p>Timi nai ho mero, even on your hard days. Especially on your hard days.</p><p>— Raja 💖</p>`},
-  angry:{title:"😡 When you're angry",content:`<p>Okay okay, angrybird mode activated 😄</p><p>I know how you get. I know how fast it comes. And honestly? Even your anger makes sense to me — because I know you. Under all of it, you're still you.</p><p>Riso aayo? Thik cha. Feel it. But when the storm is over — come back. No ego, no fight. Just me, waiting.</p><p>Because I'd rather deal with your anger than lose you.</p><p>— your Raja 🥲</p>`},
-  miss:{title:"💭 When you miss me",content:`<p>Babe, I miss you too. More than I say.</p><p>Timilai miss garchu — like, properly. The video calls, your face on the screen, the way we talk until one of us quietly falls asleep without saying goodbye.</p><p>Different cities, same feelings. Yo distance le hamro mann lai alag garna sakena.</p><p>Not long now. I'm coming. End of the month. Just hold on a little more, okay?</p><p>— love, Raja 💕</p>`},
-  doubt:{title:"🌊 When you doubt us",content:`<p>Dear, I know distance is hard. I know sometimes things feel uncertain. I know you wonder.</p><p>But let me be clear — I'm not confused about you. Kahilyai thiyen.</p><p>Five years of choosing each other through everything — breakups, distance, hard days — that doesn't happen by accident. That's real. That's us.</p><p>Don't let the doubt win. We've survived harder things than this. And the plan is still fixed.</p><p>Timi nai ho mero. That hasn't changed. It won't.</p><p>— always yours, Raja 💖</p>`}
-};
-
-function openLetter(key){
-  const l=letters[key];
-  document.getElementById('modalTitle').textContent=l.title;
-  document.getElementById('modalContent').innerHTML=l.content;
-  openModal('letterModal');
-}
-function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
-document.querySelectorAll('.modal-bg').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id);});});
-
-// VOICE + BGM
-let voicePlaying=false,musicStarted=false;
-const voiceAudio=document.getElementById('voiceAudio');
-const bgMusic=document.getElementById('bgMusic');
-const voiceBtn=document.getElementById('voiceBtn');
-const voiceStatus=document.getElementById('voiceStatus');
-
-document.addEventListener('click',()=>{
-  if(!musicStarted){bgMusic.volume=0.28;bgMusic.play().catch(()=>{});musicStarted=true;}
+// BGM — starts on first tap anywhere
+let musicStarted = false;
+document.addEventListener('click', () => {
+  if (!musicStarted) {
+    const bg = document.getElementById('bgMusic');
+    bg.volume = 0.28;
+    bg.play().catch(()=>{});
+    musicStarted = true;
+  }
 });
 
-function playVoice(){
-  if(!voicePlaying){
-    bgMusic.volume=0.07;
-    voiceAudio.play().catch(()=>{voiceStatus.textContent="⚠️ Add voice.m4a in the same folder";});
-    voiceBtn.classList.add('playing');voiceBtn.textContent='⏸️';
-    voiceStatus.textContent="Playing… 🎙️";voicePlaying=true;
+// VOICE
+let voicePlaying = false;
+const voiceAudio = document.getElementById('voiceAudio');
+const bgMusic    = document.getElementById('bgMusic');
+const voiceBtn   = document.getElementById('voiceBtn');
+const voiceStatus= document.getElementById('voiceStatus');
+
+function playVoice() {
+  if (!voicePlaying) {
+    bgMusic.volume = 0.07;
+    voiceAudio.play().catch(() => { voiceStatus.textContent = "⚠️ Add voice.m4a in the same folder"; });
+    voiceBtn.classList.add('playing');
+    voiceBtn.textContent = '⏸️';
+    voiceStatus.textContent = "Playing… 🎙️";
+    voicePlaying = true;
   } else {
-    voiceAudio.pause();voiceAudio.currentTime=0;bgMusic.volume=0.28;
-    voiceBtn.classList.remove('playing');voiceBtn.textContent='🎙️';
-    voiceStatus.textContent='';voicePlaying=false;
+    voiceAudio.pause(); voiceAudio.currentTime = 0;
+    bgMusic.volume = 0.28;
+    voiceBtn.classList.remove('playing');
+    voiceBtn.textContent = '🎙️';
+    voiceStatus.textContent = '';
+    voicePlaying = false;
   }
 }
-voiceAudio.addEventListener('ended',()=>{
-  bgMusic.volume=0.28;voiceBtn.classList.remove('playing');
-  voiceBtn.textContent='🎙️';voiceStatus.textContent='';voicePlaying=false;
+voiceAudio.addEventListener('ended', () => {
+  bgMusic.volume = 0.28;
+  voiceBtn.classList.remove('playing');
+  voiceBtn.textContent = '🎙️';
+  voiceStatus.textContent = '';
+  voicePlaying = false;
 });
 </script>
 </body>
